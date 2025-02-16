@@ -1,18 +1,17 @@
 pipeline {
-    // Déclaration des variables d'environnement
     environment {
-        registry = "hjerdouj/tp4"  // Nom du registre DockerHub
-        registryCredential = 'dockerhub' // Identifiant Jenkins pour DockerHub
-        dockerImage = ''  // Variable pour stocker l'image Docker construite
+        registry = "bouhouda/tp4"
+        registryCredential = 'dockerhub'
+        dockerImage = ''
     }
 
-    agent any  // Exécution du pipeline sur n'importe quel agent disponible
+    agent any
 
     stages {
         stage('Cloning Git') {
             steps {
                 echo "Clonage du repository depuis GitHub..."
-                git 'https://github.com/devJerdouj/tp4Devops'
+                git 'https://github.com/bouhouda/tp4Devops'
             }
         }
 
